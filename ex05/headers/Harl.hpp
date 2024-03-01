@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 18:05:51 by rdias-ba          #+#    #+#             */
-/*   Updated: 2024/03/01 15:25:18 by rdias-ba         ###   ########.fr       */
+/*   Created: 2024/03/01 14:02:27 by rdias-ba          #+#    #+#             */
+/*   Updated: 2024/03/01 14:19:09 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-int main()
+#include <string>
+#include <iostream>
+
+class Harl
 {
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
+	public:
+		
+			Harl(void);
+			~Harl(void);
+			
+			void complain(std::string level);
+
+	private:
 	
-	return (0);
-}
+			void debug(void);
+			void info(void);
+			void warning(void);
+			void error(void);
+	
+};
+
+#endif

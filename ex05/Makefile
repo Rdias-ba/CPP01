@@ -6,16 +6,17 @@
 #    By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/24 13:47:59 by rdias-ba          #+#    #+#              #
-#    Updated: 2024/03/01 13:59:58 by rdias-ba         ###   ########.fr        #
+#    Updated: 2024/03/01 15:04:58 by rdias-ba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = ex05
 CC = c++
 Flags = -Wextra -Werror -Wall -std=c++98
 VPATH = srcs
+Includes = -I ./headers
 
-SRCS = main.cpp
+SRCS = main.cpp Harl.cpp
 
 OBJS = $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
 OBJS_DIR = objs
@@ -29,7 +30,7 @@ $(OBJS_DIR):
 		mkdir -p $@
 
 $(OBJS_DIR)/%.o: %.cpp
-		$(CC) $(Flags) -c $< -o $@
+		$(CC) $(Flags) $(Includes) -c $< -o $@
 
 clean:
 		rm -rf $(OBJS_DIR)

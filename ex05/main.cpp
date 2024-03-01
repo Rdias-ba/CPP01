@@ -5,31 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 18:05:51 by rdias-ba          #+#    #+#             */
-/*   Updated: 2024/03/01 15:25:18 by rdias-ba         ###   ########.fr       */
+/*   Created: 2024/03/01 14:49:08 by rdias-ba          #+#    #+#             */
+/*   Updated: 2024/03/01 15:13:20 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "Harl.hpp"
 
-int main()
+int main(void)
 {
+	std::string message;
+	Harl harl;
+
+	std::cout << "Message de Harl: ";
+	std::cin >> message;
+	while (1)
 	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
+		if (message == "DEBUG" || message == "INFO" || message == "WARNING" || message == "ERROR")
+		{
+			harl.complain(message);
+			break;
+		}
+		else
+		{
+			std::cout << "Message invalide réessayez: ";
+			std::cin >> message;
+		}
 	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-	
 	return (0);
 }

@@ -6,11 +6,11 @@
 #    By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/24 13:47:59 by rdias-ba          #+#    #+#              #
-#    Updated: 2024/03/01 13:59:58 by rdias-ba         ###   ########.fr        #
+#    Updated: 2024/03/01 13:59:42 by rdias-ba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = ex04
 CC = c++
 Flags = -Wextra -Werror -Wall -std=c++98
 VPATH = srcs
